@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import { Header } from './components/header';
-import './App.css'; // Подключаем общий CSS-файл
+import Home from './pages/Home/Home';
+import { Header } from './components/Header/Header';
+import About from './pages/About/About';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-container">
+      <Layout>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </div>
+      </Layout>
     </BrowserRouter>
   );
 }

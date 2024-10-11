@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './button.module.css';
+import classes from './Button.module.css';
 
 interface ButtonProps {
   label: string;
@@ -10,10 +10,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ label, onClick, color, size }) => {
   return (
-    <button
-      className={`${styles.button} ${styles[size]} ${styles[color]}`}
-      onClick={onClick}
-    >
+    <button className={`${classes.button} ${classes[size]} ${classes[color]}`} onClick={onClick}>
       {label}
     </button>
   );
