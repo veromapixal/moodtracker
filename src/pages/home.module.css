@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Занимаем всю высоту экрана */
+    background-color: #ffffff; /* Белый фон */
+    font-family: 'Roboto', sans-serif; /* Подключение шрифта */
+    padding: 0 20px; /* Отступы по бокам */
+  }
+  
+  .header {
+    width: 100%; /* Занимаем всю ширину */
+    background-color: #f8f9fa; /* Светлый фон для header */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по горизонтали */
+  }
+  
+  .header h1 {
+    margin: 0; /* Убираем отступы */
+    font-size: 2rem; /* Размер заголовка */
+  }
+  
+  .nav {
+    margin-top: 10px;
+  }
+  
+  .nav a {
+    margin: 0 15px; /* Отступы между ссылками */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #007bff; /* Цвет ссылок */
+  }
+  
+  .description {
+    text-align: center;
+    margin: 40px 0; /* Отступы сверху и снизу */
+  }
+  
+  .tryOutSection {
+    margin-bottom: 40px; /* Отступ снизу */
+  }
+  
+  .infoSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Устанавливаем ширину секции */
+    margin-bottom: 40px;
+  }
+  
+  .imagePlaceholder {
+    width: 50%; /* Занимаем половину ширины */
+    height: 300px; /* Высота изображения */
+    background-color: #e0e0e0; /* Серый фон для заполнения */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+  
+  .swipeInfo {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .quoteSection {
+    width: 80%; /* Устанавливаем ширину для блока цитаты */
+    text-align: center;
+    font-style: italic;
+    color: #777; /* Серый цвет для цитаты */
+    border-top: 1px solid #ccc; /* Линия сверху */
+    padding-top: 20px;
+  }
