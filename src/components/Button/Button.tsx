@@ -1,13 +1,16 @@
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ButtonProps {
   children: ReactNode;
+  to: string;
   color?: 'pastel-yellow' | 'pastel-blue';
   size?: 'small' | 'medium' | 'large';
   onClick?: () => void;
 }
 
 export const Button = ({ 
+  to,
   children, 
   color = 'pastel-yellow', 
   size = 'medium',
@@ -25,7 +28,8 @@ export const Button = ({
   };
 
   return (
-    <button 
+    <Link to={to} className="inline-block">
+      <button 
       onClick={onClick}
       className={`
         ${colorClasses[color]}
@@ -34,9 +38,11 @@ export const Button = ({
         transition-colors
         duration-300
         font-medium
+        mb-[px]
       `}
     >
       {children}
     </button>
+    </Link>
   );
 }
