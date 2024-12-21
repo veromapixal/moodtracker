@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import { Header } from './components/Header/Header';
-import About from './pages/About/About';
-import Layout from './components/Layout/Layout';
+import { Navigation } from './components/Navigation/Navigation';
+import { Home } from './pages/Home/Home';
+import { About } from './pages/About/About';
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Header />
+      <div className="min-h-screen bg-[#FFF9E5]">
+        <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* Other routes will be added here */}
         </Routes>
-      </Layout>
+      </div>
     </BrowserRouter>
   );
 }

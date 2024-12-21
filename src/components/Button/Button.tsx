@@ -1,19 +1,42 @@
-import React from 'react';
-import classes from './Button.module.css';
+import { ReactNode } from 'react';
 
 interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  color: 'blue' | 'gray';
-  size: 'small' | 'medium' | 'large';
+  children: ReactNode;
+  color?: 'pastel-yellow' | 'pastel-blue';
+  size?: 'small' | 'medium' | 'large';
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, color, size }) => {
+export const Button = ({ 
+  children, 
+  color = 'pastel-yellow', 
+  size = 'medium',
+  onClick 
+}: ButtonProps) => {
+  const colorClasses = {
+    'pastel-yellow': 'bg-[#FFFDC6] hover:bg-[#FFF9A3]',
+    'pastel-blue': 'bg-[#E5F6FF] hover:bg-[#CCE9FF]'
+  };
+
+  const sizeClasses = {
+    small: 'px-4 py-2 text-sm',
+    medium: 'px-6 py-3 text-base',
+    large: 'px-[100px] py-[20px] font-semibold text-4xl'
+  };
+
   return (
-    <button className={`${classes.button} ${classes[size]} ${classes[color]}`} onClick={onClick}>
-      {label}
+    <button 
+      onClick={onClick}
+      className={`
+        ${colorClasses[color]}
+        ${sizeClasses[size]}
+        rounded-lg
+        transition-colors
+        duration-300
+        font-medium
+      `}
+    >
+      {children}
     </button>
   );
-};
-
-export default Button;
+}
